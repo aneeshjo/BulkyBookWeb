@@ -1,0 +1,40 @@
+# Visual Studio
+.vs/
+<<<<<<< HEAD
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+=======
+>>>>>>> 370bcd1 (Add gitignore)
+
+# Build output
+[Bb]in/
+[Oo]bj/
+
+<<<<<<< HEAD
+=======
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+>>>>>>> 370bcd1 (Add gitignore)
+# Visual Studio Code
+.vscode/
+
+# Test results
+TestResults/
+
+# NuGet
+packages/
+
+# OS files
+<<<<<<< HEAD
+.DS_Store
+Thumbs.db
+=======
+Thumbs.db
+.DS_Store
+>>>>>>> 370bcd1 (Add gitignore)
