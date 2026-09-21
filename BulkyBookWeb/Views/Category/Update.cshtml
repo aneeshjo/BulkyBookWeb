@@ -1,0 +1,38 @@
+﻿@using BulkyBookWeb.Models
+@model Category
+
+<div class="container-fluid py-3">
+    <a href="#" class="text-decoration-none text-secondary small fw-medium d-inline-flex align-items-center gap-1 mb-3">
+        <i class="bi bi-arrow-left"></i> Back to categories
+    </a>
+    <div class="card border shadow-sm overflow-hidden">
+        <div asp-validation-summary="All" class="text-danger small" ></div>
+        <div class="card-header text-white py-3 px-4" style="background: linear-gradient(to right, #065f46, #282828, #191414);">
+            <h5 class="mb-0 fw-bold"><i class="bi bi-plus-lg me-2"></i>Update Category</h5>
+            <p class="mb-0 small" style="color: #1DB954;">Modify the details of an existing category</p>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="Update" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label fw-semibold small">Category Name</label>
+                    <input type="text" name="Name" asp-for="Name" class="form-control" placeholder="Enter category name" />
+                    <span asp-validation-for="Name" class="text-danger small"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="DisplayOrder"  class="form-label fw-semibold small">Display Order</label>
+                    <input type="text" name="DisplayOrder" asp-for="DisplayOrder" class="form-control" placeholder="Enter display order" />
+                    <span asp-validation-for="DisplayOrder" class="text-danger small"></span>
+                </div>
+                <div class="d-flex gap-2 mt-4">
+                    <button type="submit" class="btn btn-accent fw-semibold">Update Category</button>
+                    <a asp-action="Index" asp-controller="Category" class="btn btn-light fw-medium">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
