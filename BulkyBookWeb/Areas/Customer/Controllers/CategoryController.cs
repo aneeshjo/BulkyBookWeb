@@ -4,8 +4,9 @@ using BulkyBook.Models;
 using BulkyBook.Business.Services.IServices;
 
 
-namespace BulkyBookWeb.Controllers
+namespace BulkyBookWeb.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class CategoryController : Controller
     {
         private readonly ICategoryService _categoryService;

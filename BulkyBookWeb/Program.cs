@@ -63,6 +63,12 @@ app.UseAuthorization();
 app.MapStaticAssets();
 
 
+app.MapControllerRoute(
+    name: "MyArea",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}")
+    .WithStaticAssets();
+
+
 // Defines the default MVC route.
 //
 // URL pattern:
@@ -84,7 +90,8 @@ app.MapStaticAssets();
 // /Product/Details/5   → ProductController → Details(5)
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+    pattern: "{controller=Home}/{action=Index}/{id?}",
+    defaults: new {area="Customer"})
     .WithStaticAssets();
 
 
