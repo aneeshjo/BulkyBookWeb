@@ -2,21 +2,39 @@
 
 #nullable disable
 
-namespace BulkyBookWeb.Migrations
+namespace BulkyBook.DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class addDisplayOrderToCategory : Migration
+    public partial class addDisplayOrderTodata : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<string>(
-                name: "DisplayOrder",
+            migrationBuilder.UpdateData(
                 table: "Categories",
-                type: "nvarchar(max)",
-                nullable: false,
-                defaultValue: "");
+                keyColumn: "Id",
+                keyValue: 1,
+                column: "DisplayOrder",
+                value: "1");
 
+            migrationBuilder.UpdateData(
+                table: "Categories",
+                keyColumn: "Id",
+                keyValue: 2,
+                column: "DisplayOrder",
+                value: "2");
+
+            migrationBuilder.UpdateData(
+                table: "Categories",
+                keyColumn: "Id",
+                keyValue: 3,
+                column: "DisplayOrder",
+                value: "3");
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
             migrationBuilder.UpdateData(
                 table: "Categories",
                 keyColumn: "Id",
@@ -37,14 +55,6 @@ namespace BulkyBookWeb.Migrations
                 keyValue: 3,
                 column: "DisplayOrder",
                 value: "");
-        }
-
-        /// <inheritdoc />
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder.DropColumn(
-                name: "DisplayOrder",
-                table: "Categories");
         }
     }
 }
