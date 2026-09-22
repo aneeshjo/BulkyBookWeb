@@ -4,6 +4,8 @@
 // application-level settings.
 
 
+using BulkyBook.Business.Services;
+using BulkyBook.Business.Services.IServices;
 using BulkyBook.DataAccess.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +19,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SQLConnection")));
 
-
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 // Builds the ASP.NET Core application using all the configuration
 // and services registered above.
 var app = builder.Build();
