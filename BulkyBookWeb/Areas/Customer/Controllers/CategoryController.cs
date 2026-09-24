@@ -20,7 +20,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
             var categories = await _categoryService.GetAllCategoriesAsync();
             return View(categories);
         }
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
             return View();
         }
